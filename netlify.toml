@@ -2,6 +2,11 @@
 publish = "public"
 command = "hugo --gc --minify -b ${DEPLOY_PRIME_URL}"
 
+[[headers]]
+  for = "/admin/config.yml"
+  [headers.values]
+    Content-Type = "text/yaml"
+
 [build.environment]
 HUGO_VERSION = "0.147.9"
 

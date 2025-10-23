@@ -1,9 +1,19 @@
 <!doctype html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-    <script src="https://unpkg.com/netlify-cms-app@latest/dist/netlify-cms.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body></body>
+  <body>
+    <!-- Контейнер Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms-app@latest/dist/netlify-cms.js"></script>
+    <script>
+      if (window.NetlifyCmsApp) {
+        NetlifyCmsApp.init();
+      } else {
+        document.body.innerHTML = "<h2 style='font-family:sans-serif;color:#c00;text-align:center;margin-top:40px'>Ошибка: Netlify CMS не загрузился</h2>";
+      }
+    </script>
+  </body>
 </html>
