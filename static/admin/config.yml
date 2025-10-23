@@ -10,7 +10,7 @@ backend:
 # Вам нужно будет настроить Auth Provider, например, через Netlify Identity.
 # Если вы хостите на Netlify, используйте git-gateway.
 # Если на других платформах, используйте Netlify Identity (см. ниже).
-publish_mode: editorial # Добавляет возможность черновиков (Workflow)
+publish_mode: simple # Добавляет возможность черновиков (Workflow)
 
 # 3. Media (Медиафайлы: куда сохранять изображения)
 media_folder: "static/uploads"  # Папка, где Netlify CMS будет сохранять загруженные файлы
