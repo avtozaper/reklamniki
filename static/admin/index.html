@@ -8,15 +8,15 @@
   <body>
     <div id="nc-root"></div>
     <script>
-      // Проверяем доступность CDN
       const script = document.createElement("script");
-      script.src = "https://unpkg.com/netlify-cms-app@2.15.83/dist/netlify-cms.js";
+      // ✅ Последняя стабильная версия CMS (рабочая)
+      script.src = "https://unpkg.com/netlify-cms-app@2.15.72/dist/netlify-cms.js";
       script.onload = () => {
-        console.log("Netlify CMS loaded");
+        console.log("Netlify CMS loaded ✅");
         NetlifyCmsApp.init();
       };
       script.onerror = () => {
-        document.body.innerHTML = "<h2 style='font-family:sans-serif;color:#c00;text-align:center;margin-top:50px'>Ошибка: не удалось загрузить netlify-cms.js</h2><p style='text-align:center'>Проверь соединение с <a href='https://unpkg.com/netlify-cms-app@2.15.83/dist/netlify-cms.js' target='_blank'>unpkg CDN</a>.</p>";
+        document.body.innerHTML = "<h2 style='font-family:sans-serif;color:#c00;text-align:center;margin-top:50px'>Ошибка: не удалось загрузить netlify-cms.js</h2><p style='text-align:center'>Проверь соединение с <a href='https://unpkg.com/netlify-cms-app@2.15.72/dist/netlify-cms.js' target='_blank'>unpkg CDN</a>.</p>";
       };
       document.body.appendChild(script);
     </script>
