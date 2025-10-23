@@ -9,10 +9,9 @@
     <div id="nc-root"></div>
     <script>
       const script = document.createElement("script");
-      // ✅ Последняя стабильная версия CMS (рабочая)
-      script.src = "https://unpkg.com/netlify-cms-app@2.15.72/dist/netlify-cms.js";
+      script.src = "/admin/vendor/netlify-cms.js";
       script.onload = () => {
-        console.log("Netlify CMS loaded ✅");
+        console.log("Netlify CMS loaded");
         NetlifyCmsApp.init();
       };
       script.onerror = () => {
