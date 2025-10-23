@@ -2,18 +2,23 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <title>Content Manager</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Netlify CMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <!-- Контейнер Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms-app@latest/dist/netlify-cms.js"></script>
+    <div id="nc-root"></div>
     <script>
-      if (window.NetlifyCmsApp) {
+      // Проверяем доступность CDN
+      const script = document.createElement("script");
+      script.src = "https://unpkg.com/netlify-cms-app@2.15.83/dist/netlify-cms.js";
+      script.onload = () => {
+        console.log("Netlify CMS loaded");
         NetlifyCmsApp.init();
-      } else {
-        document.body.innerHTML = "<h2 style='font-family:sans-serif;color:#c00;text-align:center;margin-top:40px'>Ошибка: Netlify CMS не загрузился</h2>";
-      }
+      };
+      script.onerror = () => {
+        document.body.innerHTML = "<h2 style='font-family:sans-serif;color:#c00;text-align:center;margin-top:50px'>Ошибка: не удалось загрузить netlify-cms.js</h2><p style='text-align:center'>Проверь соединение с <a href='https://unpkg.com/netlify-cms-app@2.15.83/dist/netlify-cms.js' target='_blank'>unpkg CDN</a>.</p>";
+      };
+      document.body.appendChild(script);
     </script>
   </body>
 </html>
